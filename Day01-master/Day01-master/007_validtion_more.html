@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	var box = null;
+	function validateMe(){
+		if(box.value < 18){
+			box.setCustomValidity("you are too young to join us");
+		}else if(box.value > 70){
+			box.setCustomValidity("you are too old to join us");
+		}else{
+			box.setCustomValidity("");
+		};		
+	};
+	window.onload = init;
+	function init(){
+		box = document.getElementsByTagName("input")[0];
+		validateMe();
+		box.oninput = function(){
+			box.checkValidity();
+		};
+
+		/*
+		box.onfocus = validateMe;
+		box.onblur = validateMe;
+		box.onchange = validateMe;
+		 */
+		// document.getElementsByTagName("input")[1].onclick = validateMe;
+	}
+	</script>
+</head>
+<body>
+	<form action="#">
+		<fieldset>
+		<legend>Application Form</legend>
+		<table>
+			<tr>
+				<td>User Age</td>
+				<td>
+					<input type="number" name="uAge" required min="18" max="70" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="Submit" />
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	/*
+		function myFun(){
+			this.city = "Nagpur";
+			var secret = "My Secret";
+			this.sayMessage = function(){
+				return secret;
+			};
+		};
+		var mf = new myFun();
+		console.log(mf.city);
+		console.log(mf.secret);
+		console.log(mf.sayMessage());
+	 */
+		function myFun(){
+			var lets_take_a_break = "little later";
+			var secret = "My Secret";
+			return function(){
+				return secret;
+			};
+		};
+		var mf = new myFun();
+		console.log(mf());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+		var obj1 = new Object();
+		var obj2 = {};
+		var obj3 = Object.create(null);
+		/*
+		console.log(typeof obj1);
+		console.log(typeof obj2);
+		console.log(typeof obj3);
+		 */
+		obj1.fName = "Bruce";
+		obj1.lName = "Wayne";
+		obj1.fullName = function(){
+			return this.fName + " "+this.lName;
+		};
+		console.log(obj1.fullName());
+		
+		//-----------------------------------------
+		// Function declaration 
+		function myFun(){
+			
+		};
+		// Function expression 
+		var myFun1 = function (){
+			
+		};
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

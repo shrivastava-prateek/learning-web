@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		#chart{
+			width: 215px;
+			height: 150px;
+			background-color: silver;
+			float: left;
+			position: relative;
+		}
+		#chart div{
+			width: 10px;
+			background-color: orange;
+			margin-right: 2px;
+		}
+		#map{
+			width: 150px;
+			height: 150px;
+			background-color: silver;
+			float: left;
+			margin-left: 20px;
+		}
+	</style>
+	<script src="lib/AjaxFactory.js"></script>
+	<script>
+		window.onload = function(){
+			var data = null;
+			var xhr = factory.create();
+				xhr.onreadystatechange = changeHandler;
+			document.getElementById("btn").addEventListener("click", function(){
+				xhr.open("get", "data/data.json", true);
+				xhr.send();
+			});
+			document.getElementById("chart").addEventListener("click", function(event){
+				var i = event.target.getAttribute("data-prop");
+				document.getElementById("map").innerHTML = "<img src='https://maps.googleapis.com/maps/api/staticmap?center="+data.employees[i].city+","+data.employees[i].state+"&zoom=15&size=150x150'/>";
+				document.getElementById("uName").innerHTML = data.employees[i].name;
+				document.getElementById("uFine").innerHTML = data.employees[i].fine;
+			});
+			document.getElementById("cb").addEventListener("change", function(event){
+				var i = event.target.value;
+				document.getElementById("map").innerHTML = "<img src='https://maps.googleapis.com/maps/api/staticmap?center="+data.employees[i].city+","+data.employees[i].state+"&zoom=15&size=150x150'/>"
+			});
+			function changeHandler(){
+				if(xhr.status == 200 && xhr.readyState == 4){
+					data = JSON.parse(xhr.responseText);
+					var pos = 0;
+					for(var i = 0 ; i < data.employees.length; i++){
+						document.getElementById("cb").innerHTML += "<option value='"+i+"'>"+data.employees[i].name+"</option>";
+						console.log(pos);
+						if(data.employees[i].fine < 100){
+							document.getElementById("chart").innerHTML += "<div data-prop='"+i+"' style='height:"+data.employees[i].fine+"px; position:absolute; bottom:0px; left:"+pos+"px; background-color:green'/>";
+						}else{
+							document.getElementById("chart").innerHTML += "<div data-prop='"+i+"' style='height:"+data.employees[i].fine+"px; position:absolute; bottom:0px; left:"+pos+"px; background-color:red'/>";
+						}
+							
+						pos = pos+14;
+					}
+					// document.getElementById("box").innerHTML
+				}
+			}
+		};
+	</script>
+</head>
+<body>
+	<button id="btn">Get Data</button>
+	<!--div id="box"></div-->
+	<select id="cb">
+		<option>Select Here</option>
+	</select>
+	<hr/>
+	
+	<div id="chart"></div>
+	<div id="map"></div>
+	<div id="info">
+		<h1 id="uName"></h1>
+		<h1 id="uFine"></h1>
+	</div>
+	<!--
+		document.getElementById("map").innerHTML = "<img src='https://maps.googleapis.com/maps/api/staticmap?center="+data.employees[i].city+","+data.employees[i].state+"&zoom=15&size=150x150'/>";
+	-->
+</body>
+</html>

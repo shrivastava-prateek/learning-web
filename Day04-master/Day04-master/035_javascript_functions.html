@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	// STEP 1
+	//---------------------------------------------------
+	/*
+		function myFun(){
+			for(var i = 0 ; i < arguments.length; i++){
+				alert(arguments[i]);
+			}
+		};
+	 */
+	// STEP 2
+	//---------------------------------------------------
+	// window.onload = function(){
+	window.addEventListener("load", function(){
+		document
+		.querySelector("button")
+		.addEventListener("click", function(event){
+			// alert(event.target.getAttribute("title"));
+			alert(event.target.getAttribute("data-prodId"));
+		});
+	});
+	alert("hello there");
+	// event.target
+	// event.type
+	// event.currentTarget
+	</script>
+</head>
+<body>
+	<!--button onclick="myFun('Happy New Year','2016')">Click Me</button-->
+	
+	<button data-prodId="001" title="welcome to your life">Click Me</button>
+</body>
+</html>

@@ -1,0 +1,79 @@
+{
+	"employees": [
+				{
+					"name": "heena",
+					"fine": 40,
+					"city": "bhopal",
+					"state": "madhya pradesh"
+				}, {
+					"name": "nikita",
+					"fine": 30,
+					"city": "amaravati",
+					"state": "maharashtra"
+				}, {
+					"name": "sumit",
+					"fine": 30,
+					"city": "ranchi",
+					"state": "jharkhand"
+				}, {
+					"name": "rashmi",
+					"fine": 70,
+					"city": "nagpur",
+					"state": "maharashtra"
+				}, {
+					"name": "ajinkya",
+					"fine": 110,
+					"city": "nagpur",
+					"state": "maharashtra"
+				}, {
+					"name": "sachin",
+					"fine": 30,
+					"city": "ujjain",
+					"state": "madhya pradesh"
+				}, {
+					"name": "ruchi",
+					"fine": 10,
+					"city": "gwalior",
+					"state": "madhya pradesh"
+				}, {
+					"name": "roshan",
+					"fine": 10,
+					"city": "nagpur",
+					"state": "madhya pradesh"
+				}, {
+					"name": "dipti",
+					"fine": 10,
+					"city": "indore",
+					"state": "madhya pradesh"
+				}, {
+					"name": "vijay",
+					"fine": 10,
+					"city": "bangalore",
+					"state": "karnataka"
+				}, {
+					"name": "ankita",
+					"fine": 100,
+					"city": "katni",
+					"state": "madhya pradesh"
+				}, {
+					"name": "arpit",
+					"fine": 40,
+					"city": "tikamgarh",
+					"state": "madhya pradesh"
+				}, {
+					"name": "prateek",
+					"fine": 120,
+					"city": "datia",
+					"state": "madhya pradesh"
+				}, {
+					"name": "nikhil",
+					"fine": 10,
+					"city": "yavatmal",
+					"state": "maharashtra"
+				}, {
+					"name": "amarjit",
+					"fine": 20,
+					"city": "bhopal",
+					"state": "madhya pradesh"
+				}]
+}

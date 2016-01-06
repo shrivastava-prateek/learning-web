@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	var pos = null;
+	var zoom = null;
+	var wp = null;
+		window.onload = function(){
+			document.querySelectorAll("button")[0].addEventListener("click", startHandler);
+			document.querySelectorAll("button")[1].addEventListener("click", stopHandler);
+		};
+		function startHandler(){
+			if(navigator.geolocation){
+				// document.querySelector("#box").innerHTML = "Geolocation is Available";
+				wp = navigator.geolocation.watchPosition(
+					function(position){
+						pos = position;
+						checkIt();
+					}, 
+					function(error){
+						document.querySelector("#box").innerHTML = "Geolocation is Having a problem";
+					}				
+				)
+			}else{
+				document.querySelector("#box").innerHTML = "Are you still using IE 8 ?";
+			};
+			
+			document.querySelector("#zoomin").addEventListener("change", checkIt);
+		};
+		function stopHandler(){
+			navigator.geolocation.clearWatch(wp);
+		};
+		function checkIt(){
+			zoom = document.querySelector("#zoomin").value;
+			document.querySelector("#box").innerHTML = new Date(pos.timestamp);
+			document.querySelector("#lon").innerHTML = pos.coords.longitude; 
+			document.querySelector("#lat").innerHTML = pos.coords.latitude;
+			document.querySelector("#acc").innerHTML =pos.coords.accuracy;
+			document.querySelector("#map").src = "https://maps.googleapis.com/maps/api/staticmap?center="+pos.coords.latitude+","+pos.coords.longitude+"&zoom="+zoom+"&size=800x800&markers=color:orange|"+pos.coords.latitude+","+pos.coords.longitude;
+		}
+		
+	</script>
+</head>
+<body>
+	<button>Track Me</button>
+	<button>Stop Tracking Me</button>
+	<h1 id="box" class="boxer"></h1>
+	<h3> Longitude <span id="lon"></span> </h3>
+	<h3> Latitude <span id="lat"></span> </h3>
+	<h3> Accuracy <span id="acc"></span> </h3>
+	<input id="zoomin" type="range" min="5" max="20" value="10" />
+	<hr/>
+	<img id="map" />
+</body>
+</html>

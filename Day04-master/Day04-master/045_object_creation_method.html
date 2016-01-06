@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	/*
+		var batman = {
+			fName : "Bruce",
+			lName : "Wayne",
+			city : "Gotham"
+		};
+		var obj = Object.create(batman);
+			console.log(obj.fName);
+			obj.power = 7;
+			console.log(obj.power);
+	 */
+
+		var obj = Object.create(null);
+			Object.defineProperty(obj,"power",{
+				value : 7,
+				enumerable : true,
+				configurable : true
+			});
+			console.log(obj.power);
+			for(power in obj){
+				console.log(obj.power +" is found");
+			};
+			Object.defineProperty(obj,"power",{
+				value : 7,
+				writable : true
+			});
+			obj.power = 0;
+			console.log(obj.power);
+			
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

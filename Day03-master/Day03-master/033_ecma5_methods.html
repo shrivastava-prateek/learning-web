@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>array</title>
+	<script>
+	// forEach
+		/*
+		var arr = [100,200,300,400,500];
+		arr.forEach(function(val){
+			var data = val + 1;
+			console.log(data);
+		});
+		 */
+//------------------------------------------------------------
+		/*
+		arr.forEach(function(val,i,arr){
+			// var data = val + 1;
+			// console.log(val);
+			// console.log(i);
+			// console.log(arr);
+			console.log(arr[i]+10);
+		});
+		 */
+//------------------------------------------------------------
+	// map
+	/*
+		var arr = [100,200,300,400,500];
+		var arr2 = arr.map(function(val, i, arr){
+			// console.log(val*2);
+			return val * 2;
+		});
+		console.log(arr2);
+	 */
+//------------------------------------------------------------
+
+	// filter
+	/*
+		var arr = [100,200,300,400,500];
+		var arr2 = arr.filter(function(val){
+			return val > 250;
+		});
+		console.log(arr2);
+	 */
+//------------------------------------------------------------
+
+	// every
+	/*
+		var arr = [100,200,300,400,500];
+		var bool = arr.every(function(val){
+			return val > 50;
+		});
+		console.log(bool);
+	 */
+//------------------------------------------------------------
+	// some
+	/*
+		var arr = [100,200,300,400,500];
+		var bool = arr.some(function(val){
+			return val > 1250;
+		});
+		console.log(bool);
+	 */
+//------------------------------------------------------------
+	// reduce
+	/*
+		var arr = [1,2,3,4,5];
+		var a = arr.reduce(function(x, val){
+			return x+val;
+		}, 0);
+		console.log(a);
+//------------------------------------------------------------
+		var arr = [1,2,3,4,5];
+		var b = arr.reduce(function(x, val){
+			return x * val;
+		}, 1);
+		console.log(b);
+	 */
+// https://vijay.titanpad.com/25
+
+		var arr = [1,2,3,4,5];
+		var b = arr.reduce(function(x, val){
+			console.log(x+" X "+val+" = "+x*val);
+			return x * val;
+		}, 1);
+		console.log(b);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

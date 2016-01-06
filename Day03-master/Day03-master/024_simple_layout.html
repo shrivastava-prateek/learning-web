@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		.note{
+			background-color: yellow;
+			border: 1px solid black;
+			padding: 10px;
+			width: 100px;
+			position: fixed; /* takes the position from the viewport*/
+			left: 100px;
+			top: 100px;
+		}
+		body{
+			width: 635px;
+			margin: 0px auto;
+			position: relative;
+			outline: 1px solid red;
+			height: 610px
+		}
+		.box1, .box2, .box3{
+			width: 200px;
+			background-color: silver;
+			margin: 0px 5px; 
+		}
+		article img{
+			width: 200px;
+		}
+		.box1{
+			position: absolute;
+			left: 0px;
+		}
+		.box2{
+			position: absolute;
+			left: 215px;
+		}
+		.box3{
+			position: absolute;
+			left: 425px;
+		}
+		header h1{
+			margin: 0px;
+		}
+		footer{
+			position: absolute;
+			bottom: 0px;
+		}
+	</style>
+</head>
+<body>
+	<!--
+	header+(section>article*3)+footer
+	-->
+	<header>
+		<h1>Welcome to my Application</h1>
+	</header>
+	<section>
+		<article class="box1">
+			<img src="images/batman.jpg" />
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</article>
+		<article class="box2">
+			<img src="images/ironman.jpg" />
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</article>
+		<article class="box3">
+			<img src="images/spiderman.jpg" />
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</article>
+	</section>
+	<footer>
+		&copy; rights reserved by my company
+	</footer>
+	
+	<div class="note">
+		<img src="images/rajani.jpg" width="100" />
+		<hr/>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+	</div>
+</body>
+</html>

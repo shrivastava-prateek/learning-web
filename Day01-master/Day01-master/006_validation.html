@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<!--input type="text" value="official pass" onfocus="this.value=''; this.type='password'" />
+	<input type="password" placeholder="official pass" />
+	<br/>
+	<input type="text" autofocus />
+	<br/>
+	<input type="text" autocomplete="off"  />
+	<br/-->
+	<form action="#">
+		<fieldset>
+		<legend>Application Form</legend>
+		<table>
+			<tr>
+				<td>User Name</td>
+				<td>
+					<input type="text" name="uName" required />
+				</td>
+			</tr>
+			<tr>
+				<td>User Age</td>
+				<td>
+					<input type="number" name="uAge" required min="18" max="70" />
+				</td>
+			</tr>
+			<tr>
+				<td>User Phone</td>
+				<td>
+					<!-- 
+						0712-1234-123
+					-->
+					<input 
+					type="text" 
+					name="uPhone" 
+					title="####-####-###"
+					required pattern="\d{4}-\d{4}-\d{3}" />
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" value="Submit" />
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+	</form>
+</body>
+</html>

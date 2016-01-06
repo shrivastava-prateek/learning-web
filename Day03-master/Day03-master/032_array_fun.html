@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>array</title>
+	<script>
+		var arr1 = [
+		7,
+		2,
+		6,
+		4,
+		8,
+		5,
+		3,
+		1,
+		9];
+		var arr2 = [
+		"d",
+		"c",
+		"a",
+		"e",
+		"g",
+		"i",
+		"f",
+		"b",
+		"h",
+		];
+		var arr3 = [
+			{"itemNum": 1},
+			{"itemNum": 5},
+			{"itemNum": 2},
+			{"itemNum": 3},
+			{"itemNum": 6},
+			{"itemNum": 8},
+			{"itemNum": 7},
+			{"itemNum": 9},
+			{"itemNum": 4},
+			];
+			
+		function sortObj(arg1, arg2){
+			// 1 ascending
+			// -1 decending
+			// 0 wont sort
+			if(arg1.itemNum < arg2.itemNum){
+				return 1;
+			}else if(arg1.itemNum > arg2.itemNum){
+				return -1;
+			}else{
+				return 0;
+			};
+		};
+		console.log(arr1.sort());
+		console.log(arr2.sort());
+		console.log(arr3.sort(sortObj));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

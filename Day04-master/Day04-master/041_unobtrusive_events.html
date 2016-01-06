@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+			if(document.addEventListener){
+					for(var i = 0 ; i < document.getElementsByTagName("button").length; i++){
+				
+						document.getElementsByTagName("button")[i]
+						.addEventListener("click", clickHandler);
+					}
+			}else{
+					for(var i = 0 ; i < document.getElementsByTagName("button").length; i++){
+				
+						document.getElementsByTagName("button")[i]
+						.attachEvent("onclick", clickHandlerIE);
+					}
+			}
+		};
+		function clickHandlerIE(){
+			var evt = window.event;
+			alert(evt.srcElement.innerHTML);
+		};
+		function clickHandler(evt){
+			alert(evt.target.innerHTML);
+		};
+	</script>
+</head>
+<body>
+	<button>1</button>
+	<button>2</button>
+	<button>3</button>
+	<button>4</button>
+	<button>5</button>
+</body>
+</html>

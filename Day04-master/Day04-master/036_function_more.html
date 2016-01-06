@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	/*
+		var user = "Guest";
+		
+		function funName(msg){
+			alert(msg+" "+user);
+		}
+		funName("hello there");// IIFE
+		
+		if("user" in window){
+			console.log("found");
+		}else{
+			console.log("not found");
+		};
+	 */
+		
+		(function(msg){
+			var user = "Guest";
+			alert(msg+" "+user);
+		}("hello there"));// SIAF
+		
+		if("user" in window){
+			console.log("found");
+		}else{
+			console.log("not found");
+		};
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

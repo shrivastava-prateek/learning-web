@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+		var obj = Object.create(null);
+			// Object.defineProperty()
+			// Object.defineProperties()
+			
+			Object.defineProperties(obj,{
+				fName : {
+					value : "Bruce",
+					enumerable : true
+				},
+				lName : {
+					value : "Wayne",
+					enumerable : true
+				},
+				fullName : {
+					value : function(){
+						return this.fName +" "+this.lName;
+					}
+				},
+				city : {
+					value : "Gotham",
+					writable : true
+				},
+				power : {
+					value : 7,
+					writable : true
+				},
+				changePower : {
+					get : function(){
+						return this.power;
+					},
+					set : function(val){
+						this.power = val;
+						return this.power;
+					}
+				}
+			});
+			
+			console.log( obj.fullName() );
+			console.log( obj.changePower );
+			console.log( obj.changePower = 6 );
+			
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

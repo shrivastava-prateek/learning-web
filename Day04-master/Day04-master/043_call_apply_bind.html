@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	/*
+		var Batman = {
+			fName : "Bruce",
+			lName : "Wayne",
+			city : "Gotham",
+			fullName : function(){
+				return this.fName +" "+this.lName;
+			}
+		}
+		var Superman = {
+			fName : "Clark",
+			lName : "Kent",
+			city : "Metropolis",
+			fullName : function(){
+				return this.fName +" "+this.lName;
+			}
+		}
+		
+		console.log(Batman.fullName());
+		console.log(Superman.fullName());
+	 */
+		var Batman = {
+			fName : "Bruce",
+			lName : "Wayne",
+			city : "Gotham"
+		};
+		var Superman = {
+			fName : "Clark",
+			lName : "Kent",
+			city : "Metropolis"
+		};
+		/*
+		 * 
+		var fName = "Baba";
+		var lName = "Ramdev";
+		
+		function fullName(){
+			//this.fName = "Rajani";
+			//this.lName = "Kanth"
+			return this.fName +" "+this.lName;
+		};
+		 */
+		function fullName(greeting){
+			return this.fName +" "+this.lName+" says "+greeting;
+		};
+		// console.log(fullName());
+		
+		// console.log(fullName.call(Batman));
+		// console.log(fullName.call(Superman));
+		
+		// console.log(fullName.apply(Batman));
+		// console.log(fullName.apply(Superman));
+		
+		/*
+		console.log(fullName.bind(Batman)());
+		console.log(fullName.bind(Superman)());
+		 */
+		
+		/*
+		console.log(fullName.call(Batman,"Happy New Year"));
+		console.log(fullName.apply(Superman,["Happy New Year"]));
+		 */
+		console.log(fullName.bind(Batman)("Happy New Year"));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

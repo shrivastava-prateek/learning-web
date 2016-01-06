@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Ajax Fun</title>
+	<style>
+		h3{
+			margin: 0px 0px 5px 0px;
+			font-family: arial;
+			width: 150px;
+			background-color: silver;
+			text-align: center;
+			font-weight: normal;
+		}
+	</style>
+	<script>
+	var data = null;
+	var xhr = new XMLHttpRequest(); // initialization
+		xhr.addEventListener("readystatechange", changeHandler);
+		// xhr.onreadystatechange = changeHandler;
+		
+	xhr.open("get", "data/data.xml", true);// configuration
+	
+	window.onload = function(){
+		document.getElementById("btn")
+				.addEventListener("click", clickHandler);
+	};
+	function clickHandler(){
+		xhr.send(); // request
+	};
+	function changeHandler(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+			data = xhr.responseXML;
+			for(var i = 0 ; i < data.getElementsByTagName("employee").length; i++){
+				// document.getElementById("box").innerHTML += i+" | Employee Found <br/>";
+				document.getElementById("box").innerHTML += "<h3>"+data.getElementsByTagName("name")[i].innerHTML+"<h3/>";
+			}
+			// document.getElementById("box").innerHTML += xhr.readyState+" | "++"got the data <hr/>";		
+		}
+	}
+	</script>
+</head>
+<body>
+	<button id="btn">Load Data</button>
+	<div id="box"></div>
+</body>
+</html>

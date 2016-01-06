@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Window Storage</title>
+	<style>
+		label{
+			display: inline-block;
+			width: 100px;
+			margin: 4px;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			document.querySelector("#sb")
+			.addEventListener("click", storeHandler);
+			
+			document.querySelector("#gb")
+			.addEventListener("click", getHandler);
+		};
+		function storeHandler(){
+			var obj = {
+				userName : document.querySelector("#un").value,
+				userAge : document.querySelector("#ua").value,
+				usereMail : document.querySelector("#ue").value,
+				userCity : document.querySelector("#uc").value
+			};
+			window.localStorage.obj = JSON.stringify(obj);
+			 document.querySelector("#un").value = ""
+			 document.querySelector("#ua").value = ""
+			 document.querySelector("#ue").value = ""
+			 document.querySelector("#uc").value = ""
+		};
+		function getHandler(){
+			var data = window.localStorage.obj;
+			alert(JSON.parse(data).userAge*2);
+		};
+	</script>
+</head>
+<body>
+	<label for="un"> User Name : 	</label> <input id="un" /><br/>
+	<label for="ua"> User Age : 	</label> <input id="ua" /> <br/>
+	<label for="ue"> User eMail : 	</label> <input id="ue" /> <br/>
+	<label for="uc"> User City : 	</label> <input id="uc" /><br/>
+	<label> </label>
+	<button id="sb">Store It</button>
+	<hr/>
+	<button id="gb">Get User Name</button>
+</body>
+</html>

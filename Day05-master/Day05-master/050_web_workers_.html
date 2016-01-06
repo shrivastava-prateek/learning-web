@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	window.onload = function(){
+	
+	/* STEP 1
+		for(var i = 0; i < 1000000; i++){
+			document.getElementById("log").innerHTML = i;
+		};
+	 */	
+
+	/*   STEP 2
+		var worker = new Worker("worker/workerNo1.js");
+			worker.addEventListener("message", messageHandler);
+			function messageHandler(e){
+				document.getElementById("log").innerHTML = e.data;
+			};
+			
+	 */
+	
+	/*   STEP 3
+		document.getElementById("btn").addEventListener("click", clickHandler);
+		
+		var worker = new Worker("worker/workerNo2.js");
+			worker.addEventListener("message", messageHandler);
+			function messageHandler(e){
+				document.getElementById("log").innerHTML = e.data;
+			};
+			
+		function clickHandler(){
+			var val = document.getElementById("numIp").value;
+			worker.postMessage(val);
+		};
+	 */
+	};
+	</script>
+</head>
+<body>
+	<ul>
+		<li>List Item 1</li>
+		<li>List Item 2</li>
+		<li>List Item 3</li>
+		<li>List Item 4</li>
+		<li>List Item 5</li>
+		<li>List Item 6</li>
+		<li>List Item 7</li>
+		<li>List Item 8</li>
+		<li>List Item 9</li>
+		<li>List Item 10</li>
+	</ul>
+	<hr/>
+	<h1 id="log"></h1>
+	<input id="numIp" type="number" />
+	<button id="btn">Change Number</button>
+<body>
+</html>

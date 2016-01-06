@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		label{
+			display:inline-block;
+			background-color: yellow;
+			width: 150px;
+			margin: 5px;
+		}
+	</style>
+	<script>
+		function changeHandler(elm, target){
+			// console.log(elm.value*2);
+			// document.getElementById("num").innerHTML = elm.value*2;
+			// document.getElementsByTagName("span")[0].innerHTML = elm.value*2;
+			// document.getElementsByTagName("h1")[0].innerHTML = elm.value*2;
+			// elm.nextSibling.innerHTML = elm.value*2;
+			
+		//	document.getElementById(target).innerHTML = elm.value;
+		document.getElementById(target).style.backgroundColor = elm.value;
+		document.getElementById(target).style.fontWeight = 'bold';
+		document.getElementById(target).innerHTML = elm.value;
+		}
+	</script>
+</head>
+<body>
+	
+	<datalist id="city">
+		<option>Bangalore</option>
+		<option>Nagpur</option>
+		<option>Kolkata</option>
+		<option>Mumbai</option>
+		<option>Bhupal</option>
+		<option>Lasvegas</option>
+	</datalist>
+	
+	
+	
+	<label for="fName">First Name :</label><input id="fName" type="text"   />
+	<br/>
+	<label for="lName">Last Name :</label><input id="lName" type="text"  />
+	<br/>
+	<label>Age :</label>
+	<input onchange="changeHandler(this, 'num')" type="number" min="18" max="100"  />
+	<h1 id="num"></h1>					
+	<br/>
+	<label>City :</label>
+	<input list="city" />
+	<!--select>
+		<option>Bangalore</option>
+		<option>Nagpur</option>
+		<option>Kolkata</option>
+		<option>Mumbai</option>
+		<option>Bhupal</option>
+		<option>Lasvegas</option>
+	</select-->
+	<br/>
+	<label>eMail :</label><input type="email"  />
+	<br/>
+	<label>Fav Color :</label><input onchange="changeHandler(this, 'box')"  type="color"  /><span id="box"></span>
+	<br/>
+	<label>Time :</label><input type="time"  />
+	<br/>
+	<label>Week :</label><input type="week"  />
+	<br/>
+	<label>Month :</label><input type="month"  />
+	<br/>
+	<label>Date Time :</label><input type="datetime"  />
+	<br/>
+	<label>Date Time Local :</label><input type="datetime-local"  />
+	<br/>
+	<label>Range :</label><input onchange="changeHandler(this, 'log')"  min="5" max="50" step="5" type="range"  /><span id="log"></span>
+	<br/>
+	<label>Phone :</label><input type="tel"  />
+	<br/>
+	<label>Search :</label><input type="search"  />
+	<br/>
+	<label>Web Address :</label><input type="url"  />
+</body>
+</html>

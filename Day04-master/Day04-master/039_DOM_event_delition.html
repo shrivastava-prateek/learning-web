@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		button{
+			width: 150px;
+			padding: 10px;
+		}
+		header{
+			width: 330px;
+			margin: 10px auto;
+		}
+		#box{
+			width: 1000px;
+			height: 500px;
+			margin: auto;
+			background-color: silver;
+			overflow: auto;
+		}
+		#box div{
+			width: 50px;
+			height: 50px;
+			margin: 5px;
+			float: left;
+			text-align: center;
+			font-family: Arial;
+			font-size: 30px;
+			color: white;
+			line-height: 50px;
+		}
+		#box div:hover{
+			box-shadow:5px 5px 5px black;
+			cursor: pointer;
+		}
+		
+	</style>
+	<script>
+		var childCount = 1;
+		window.onload = function(){
+			document.getElementById("addBtn")
+			.addEventListener("click", addHandler);
+			
+			document.getElementById("removeBtn")
+			.addEventListener("click", removeHandler);
+		};
+		function addHandler(){
+			var elm = document.createElement("div");
+				elm.style.backgroundColor = "rgb("+Math.round(Math.random()*255)+","+Math.round(Math.random()*255)+","+Math.round(Math.random()*255)+")";
+				elm.style.borderRadius = "25px";
+				elm.style.transform = "rotate("+Math.round(Math.random()*90)+"deg)";
+				elm.innerHTML = childCount;
+				elm.addEventListener("click", delMe);
+			document.getElementById("box").appendChild(elm);
+			childCount++;
+		}
+		function removeHandler(){
+			var elm = document.getElementById("box").firstChild;
+			if(elm){
+				document.getElementById("box").removeChild(elm);
+				// childCount--;
+			}else{
+				alert("Nothing to remove")
+			}
+		}
+		function delMe(evt){
+			document.getElementById("box").removeChild(evt.target);
+			}
+	</script>
+</head>
+<body>
+	<header>
+		<button id="addBtn">Click To Add</button>
+		<button id="removeBtn">Click To Remove</button>
+	</header>
+	<div id="box"></div>
+</body>
+</html>

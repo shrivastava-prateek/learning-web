@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Ajax Fun</title>
+	<style>
+		h3{
+			margin: 0px 0px 5px 0px;
+			font-family: arial;
+			width: 150px;
+			background-color: silver;
+			text-align: center;
+			font-weight: normal;
+		}
+	</style>
+	<script>
+	var worker = null;
+	window.onload = function(){
+		worker = new Worker("worker/worker_ajax.js");
+		worker.addEventListener("message", messageHandler);
+	};
+	function messageHandler(event){
+		var data = JSON.parse(event.data);
+		document.getElementById("box").innerHTML  = data.employees[1].name;
+	}
+	
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

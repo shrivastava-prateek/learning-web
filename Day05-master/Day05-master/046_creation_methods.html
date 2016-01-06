@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+		var obj = Object.create(null);
+			// Object.defineProperty()
+			// Object.defineProperties()
+			
+			Object.defineProperty(obj, "heroName", {
+				value : "Batman",
+				enumerable : true,  // without this property your values are not discoverable
+				writable : true, 	// without this property the values can not be changed
+				configurable : true // with this property you can re assign a configuration object
+			});
+			
+			for (heroName in obj){
+				console.log(obj.heroName+" is available");
+			};
+			
+			obj.heroName = "Joker";
+			
+			console.log(obj.heroName);
+			
+			
+			Object.defineProperty(obj, "heroName", {
+				value : "Shaktiman"
+				});
+				
+			console.log(obj.heroName);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

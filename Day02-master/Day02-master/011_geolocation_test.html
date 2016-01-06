@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+			if(navigator.geolocation){
+				// document.querySelector("#box").innerHTML = "Geolocation is Available";
+				navigator.geolocation.getCurrentPosition(
+					function(position){
+						document.querySelector("#box").innerHTML = new Date(position.timestamp);
+						document.querySelector("#lon").innerHTML =position.coords.longitude;
+						document.querySelector("#lat").innerHTML =position.coords.latitude;
+						document.querySelector("#acc").innerHTML =position.coords.accuracy;
+					}, 
+					function(error){
+						document.querySelector("#box").innerHTML = "Geolocation is Having a problem";
+					}				
+				)
+			}else{
+				document.querySelector("#box").innerHTML = "Are you still using IE 8 ?";
+			}
+		};
+	</script>
+</head>
+<body>
+	<h1 id="box" class="boxer"></h1>
+	<hr/>
+	<h1> Longitude <span id="lon"></span> </h1>
+	<h1> Latitude <span id="lat"></span> </h1>
+	<h1> Accuracy <span id="acc"></span> </h1>
+<!--
+	https://developers.google.com/maps/documentation/static-maps/intro
+	http://technicaltrainings.com/persistent/012.html
+-->
+</body>
+</html>

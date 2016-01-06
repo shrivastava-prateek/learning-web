@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		@keyframes vj{
+			0%{
+			background-color: orange;
+			transform : scale(1,1) rotate(0deg);
+			}
+			30%{
+			background-color: green;
+			transform : scale(2,.5) rotate(45deg);
+			}
+			70%{
+			background-color: pink;
+			transform : scale(.5,2) rotate(-45deg);
+			}
+			100%{
+			background-color: orange;
+			transform : scale(1,1) rotate(0deg);
+			}
+		}
+		@-webkit-keyframes vj{
+			0%{
+			background-color: orange;
+			transform : scale(1,1) rotate(0deg);
+			}
+			30%{
+			background-color: green;
+			transform : scale(2,.5) rotate(45deg);
+			}
+			70%{
+			background-color: pink;
+			transform : scale(.5,2) rotate(-45deg);
+			}
+			100%{
+			background-color: orange;
+			transform : scale(1,1) rotate(0deg);
+			}
+		}
+		.box1{
+			width: 200px;
+			height: 200px;
+			border: 1px solid gray;
+			margin: auto;
+		}
+		.box1{
+			animation-name : vj;
+			animation-iteration-count : 3;
+			animation-delay : 3s;
+			animation-direction: alternate;
+			animation-duration: 5s;
+			-webkit-animation-name : vj;
+			-webkit-animation-delay : 3s;
+			-webkit-animation-duration: 5s;
+			-webkit-animation-direction: alternate;
+			-webkit-animation-iteration-count : 3;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		[class ^= 'box']{
+			width: 100px;
+			height: 100px;
+			background-color: orange;
+			margin: 10px auto;
+			border: 5px dotted black;
+		}
+		
+		.box1{
+			border-bottom-left-radius: 50px;
+			border-bottom-right-radius: 0px;
+			border-top-left-radius:  50px;
+			border-top-right-radius:  50px;
+		}
+		.box2{
+			border-radius: 50px;
+		}
+		.box3{
+			border-radius: 50px 50px 0px 0px;
+			background-color: red;
+			border: none;
+		}
+		.box4{
+			border-radius: 0px 0px 50px 50px ;
+			background-color: blue;
+			border: none;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+</body>
+</html>
